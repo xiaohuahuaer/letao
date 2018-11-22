@@ -1,7 +1,6 @@
 
-$(function() {
 
-    // 进度条
+// 进度条
     $(document).ajaxStart(function() {
         NProgress.start();
     })
@@ -12,6 +11,8 @@ $(function() {
         NProgress.done();            
         },500)
     })
+
+$(function() {
 
     // 侧边栏二级菜单切换
     $('#category').click(function() {
