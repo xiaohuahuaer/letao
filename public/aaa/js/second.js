@@ -118,6 +118,31 @@ $(function() {
             }
         }
     });
+
+
+    $('#form').on('success.form.bv',function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: 'post',
+            url: '/category/addSecondCategory',
+            data: $('#form').serialize(),
+            success: function(info) {
+                console.log(info);
+
+                if (info.success) {
+                    $('#addModal').modal('hide');
+                    $('#form').data('bootstrapValidator').resetForm(true);
+
+                    currentPage = 1;
+                    render();
+
+                    $('#dropdownText').text('请输入一级分类');
+                    $('#imgBox img').attr('src','images/none.png');
+                }   
+            }
+        })
+    })
    
 
 })

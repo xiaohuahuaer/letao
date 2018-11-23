@@ -115,8 +115,8 @@
                         </ul>
                     </div>
 
-                    <input type="hidden" class="categoryId">
-                    <input type="hidden" class="hot" value="1">
+                    <input type="hidden" name="categoryId" >
+                    <input type="hidden" name="hot" value="1">
                 </div>
 
                 <!--请输入二级分类-->
@@ -174,7 +174,7 @@
             <td>{{v.categoryName}}</td>
             <td>{{v.brandName}}</td>
             <td>
-                <img style="height: 50px" src="{{v.brandLogo}}" alt="">
+                <img style="height: 50px" src="{{v.brandLogo ? v.brandLogo : './images/none.png'}}" alt="">
             </td>
         </tr>
     {{/each}}
